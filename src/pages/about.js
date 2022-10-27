@@ -1,4 +1,4 @@
 export function about() {
-    console.log('hello');
-    document.body = null;
+    const content = document.getElementById('content');
+    if (content) { content.remove(); }
 }

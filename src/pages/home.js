@@ -1,7 +1,11 @@
 import Icon from '../img/s.jpeg';
 
 export function home() {
+    const content = document.getElementById('content');
+    if (content) { content.remove(); }
+
     const element = document.createElement('div');
+    element.setAttribute('id', 'content');
     const h = document.createElement('h1');
     h.innerText = "giuseppe's bellissima spaghetto !";
 

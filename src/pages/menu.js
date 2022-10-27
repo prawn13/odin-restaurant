@@ -1,3 +1,6 @@
 export function menu() {
-    console.log('menu');
+    const content = document.getElementById('content');
+    if (content) { content.remove(); }
+
+    
 }
