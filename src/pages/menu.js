@@ -1,3 +1,3 @@
 export function menu() {
-    return;
+    console.log('menu');
 }
