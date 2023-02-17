@@ -1,3 +1,9 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 #content {
     background-color: red;
 }
@@ -14,4 +20,16 @@ button {
     border-radius: 6px;
     border: none;
     background-color: skyblue;
+}
+
+.footer {
+    position: fixed;
+    background-color: bisque;
+    text-align: center;
+    font-size: 16px;
+    padding: 10px;
+    bottom: 0;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, 0);
 }
