@@ -4,8 +4,17 @@ import { home } from './pages/home.js';
 import { menu } from './pages/menu.js';
 
 function buildNav() {
+    const header = document.createElement('div');
+    header.classList.add('header');
+
     const navBar = document.createElement('div');
     navBar.classList.add('nav-bar');
+
+    const name = document.createElement('div');
+    const h = document.createElement('h1');
+    name.classList.add('title');
+    h.innerText = "giuseppe's bellissima spaghetto !";
+    name.appendChild(h);
 
     const homeContainer = document.createElement('div');
     homeContainer.classList.add('home');
@@ -15,14 +24,6 @@ function buildNav() {
     homeButton.addEventListener('click', () => document.body.appendChild(home()));
     homeContainer.appendChild(homeButton);
 
-    const aboutContainer = document.createElement('div');
-    aboutContainer.classList.add('about');
-    const aboutButton = document.createElement('button');
-    aboutButton.classList.add('nav-button');
-    aboutButton.innerText = 'About';
-    aboutButton.addEventListener('click', () => document.body.appendChild(about()));
-    aboutContainer.appendChild(aboutButton);
-
     const menuContainer = document.createElement('div');
     menuContainer.classList.add('menu');
     const menuButton = document.createElement('button');
@@ -31,11 +32,24 @@ function buildNav() {
     menuButton.addEventListener('click', () => document.body.appendChild(menu()));
     menuContainer.appendChild(menuButton);
 
-    navBar.appendChild(homeContainer);
-    navBar.appendChild(aboutContainer);
-    navBar.appendChild(menuContainer);
+    const aboutContainer = document.createElement('div');
+    aboutContainer.classList.add('about');
+    const aboutButton = document.createElement('button');
+    aboutButton.classList.add('nav-button');
+    aboutButton.innerText = 'About';
+    aboutButton.addEventListener('click', () => document.body.appendChild(about()));
+    aboutContainer.appendChild(aboutButton);
 
-    return navBar;
+    header.appendChild(name);
+
+    navBar.appendChild(homeContainer);
+    navBar.appendChild(menuContainer);
+    navBar.appendChild(aboutContainer);
+    header.appendChild(navBar);
+
+    console.log(header);
+
+    return header;
 }
 
 function buildFooter() {
